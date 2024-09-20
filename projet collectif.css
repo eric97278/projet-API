@@ -1,0 +1,645 @@
+.box-container {
+    width: 90%;
+    /* Ajuster la largeur à 90% */
+    max-width: 300px;
+    /* Largeur maximale */
+    height: auto;
+    /* Hauteur automatique pour l'adaptabilité */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centrer les éléments */
+}
+
+.box {
+    width: calc(50% - 10px);
+    /* Deux boîtes par ligne avec un espacement */
+    height: auto;
+    /* Hauteur automatique */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: rgb(254, 253, 253);
+    margin: 5px;
+    /* Espacement entre les boîtes */
+}
+
+#city {
+    background-color: rgba(41, 128, 185, 0.75);
+}
+
+#temp {
+    background-color: rgba(43, 78, 101, 0.75);
+}
+
+#humidity {
+    background-color: rgba(52, 152, 219, 0.75);
+}
+
+#wind {
+    background-color: rgba(143, 146, 154, 0.75);
+}
+
+body {
+    background-image: url(https://le-boxon-de-lex.fr/galerie/originales/mars-2012/Evelyne-Dheliat--La-Meteo-de-20h--08-02-12--01.jpg);
+    background-size: cover;
+    /* Couvrir l'ensemble de l'écran */
+    background-repeat: no-repeat;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/*soleil*/
+.sun {
+    position: absolute;
+    top: 10%;
+    /* Ajuster la position */
+    left: 80%;
+    width: 5vw;
+    /* Utiliser des unités relatives */
+    height: 5vw;
+    /* Utiliser des unités relatives */
+    background-color: yellow;
+    border-radius: 50%;
+    animation: growAndShine 5s ease-in-out infinite;
+}
+
+@keyframes growAndShine {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 100px 20px #FFFACD;
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 150px 30px #FFFACD, 0 0 50px 15px rgba(255, 250, 205, 0.5);
+    }
+
+    100% {
+        transform: scale(2);
+        box-shadow: 0 0 200px 50px #FFFACD;
+    }
+}
+
+.sun {
+    position: absolute;
+    top: 2em;
+    left: 80em;
+    width: 3.5em;
+    height: 3.5em;
+    background-color: yellow;
+    border-radius: 50%;
+    border: 1px solid #FFFACD;
+    animation: growAndShine 5s ease-in-out infinite;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+/* bonhomme de neige */
+.canvas {
+    width: 25vmin;
+    height: 25vmin;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.canvas *,
+.canvas *::before,
+.canvas *::after {
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+}
+
+.head {
+    width: 43%;
+    height: 33%;
+    background:
+        radial-gradient(170% 100% at 50% 0%, #0005, #0001 37%, #0000 0);
+    background-color: #fff;
+    border-radius: 100% / 90% 90% 110% 110%;
+    top: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow:
+        inset 2vmin 0 6vmin 1vmin #fffa,
+        inset -2vmin 0 6vmin 1vmin #fffa,
+        inset 0 0 4vmin 1vmin #0004,
+        0 0.25vmin 0 1vmin;
+}
+
+.body {
+    width: 59%;
+    height: 50%;
+    background:
+        linear-gradient(45deg, #0000 45%, #0002 0 55%, #0000 0) no-repeat 118% 47% / 20% 20%,
+        linear-gradient(-45deg, #0000 45%, #0002 0 55%, #0000 0) no-repeat -15% 45% / 20% 20%,
+        radial-gradient(100% 100% at 50% 0%, #0001 34%, #0000 0);
+    background-color: #fff;
+    border-radius: 100% / 110% 110% 90% 90%;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow:
+        inset 3vmin 0 5vmin #fffa,
+        inset -3vmin 0 5vmin #fffa,
+        inset 0 0 6vmin #0004,
+        0 0.25vmin 0 1vmin;
+}
+
+.scarf {
+    width: 37%;
+    height: 25%;
+    border-radius: 50%;
+    background: #d00;
+    box-shadow:
+        inset 3vmin 1vmin 3vmin -2vmin #fffa,
+        inset -3vmin 2vmin 3vmin -2vmin #fffa,
+        inset 0 -1vmin 2vmin #8008,
+        0 0.25vmin 0 1vmin;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.scarf-hanging {
+    width: 10%;
+    height: 20%;
+    background: #d00;
+    top: 50%;
+    left: 58%;
+    border-radius: 100% 100% 100% 100% / 20% 140% 30% 10%;
+    transform: rotate(-3deg);
+    box-shadow:
+        inset 3vmin 1vmin 3vmin -2vmin #fff7,
+        inset -3vmin 2vmin 3vmin -2vmin #fff7,
+        inset 0 -1vmin 2vmin #8008,
+        0 0.25vmin 0 1vmin;
+}
+
+.thread {
+    top: 67%;
+    left: 56.5%;
+    width: 13.33%;
+    height: 7%;
+    border-radius: 100% / 50%;
+    transform: rotate(-4deg);
+    background:
+        repeating-linear-gradient(to right, #0000 0 7%, #000 7.5% 14%, #0000 0 14.5%)
+}
+
+.button {
+    box-shadow: 0 0.25vmin 0 0.8vmin;
+    background:
+        radial-gradient(circle at 35% 35%, #fff3 20%, #0000);
+    background-color: black;
+    width: 7%;
+    height: 9%;
+    border-radius: 100% 90% 110% 100%;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button+.button {
+    top: 60%;
+    transform: translateX(-50%) rotate(20deg);
+}
+
+.eye {
+    --pos: 20%;
+    box-shadow:
+        inset 0 0 1vmin 0.125vmin #000,
+        inset -0.5vmin -0.5vmin 1vmin #000,
+        inset -1.5vmin -1vmin 2vmin #fffb,
+        0.25vmin 1.25vmin 0 0.8vmin #0002,
+        0 0.25vmin 0 0.8vmin;
+    background-color: #222;
+    width: 13%;
+    height: 22%;
+    border-radius: 100% 90% 110% 100%;
+    top: 38%;
+    left: var(--pos);
+    transform: rotate(10deg);
+    overflow: hidden;
+}
+
+.eye+.eye {
+    left: auto;
+    right: var(--pos);
+}
+
+.eye::before {
+    content: "";
+    width: 45%;
+    height: 50%;
+    background: #fff;
+    border-radius: 100%;
+    top: 15%;
+    left: 10%;
+    transform: rotate(15deg);
+    box-shadow: 0 0 3vmin 1.5vmin #000;
+}
+
+.mouth {
+    width: 12%;
+    height: 16%;
+    border-radius: 100% 90% 110% 100%;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%) rotate(3deg);
+    border: 0.6vmin solid;
+    border-bottom-width: 0.9vmin;
+    clip-path: polygon(-20% 40%, 120% 30%, 120% 120%, -20% 120%)
+}
+
+.nose {
+    width: 15%;
+    height: 11%;
+    background:
+        linear-gradient(#ff05, #0000, #d805);
+    background-color: #fa0;
+    border-radius: 150% 60% 60% 150% / 100%;
+    left: 45%;
+    top: 55%;
+    transform: translate(-50%, 0);
+    box-shadow: -0.0625vmin 0 0 0.7vmin
+}
+
+.nose::before,
+.nose::after {
+    content: "";
+    width: 40%;
+    height: 80%;
+    border-radius: 100%;
+    border-right: 0.5vmin solid darkorange;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+}
+
+.nose::after {
+    width: 25%;
+    height: 60%;
+    left: 25%;
+}
+
+.cheek {
+    width: 25%;
+    height: 18%;
+    background: red;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #f003, #0000);
+    top: 65%;
+    left: 12%;
+}
+
+.cheek+.cheek {
+    left: auto;
+    right: 12%;
+}
+
+.cheek::before,
+.cheek::after {
+    content: "";
+    width: 30%;
+    height: 35%;
+    border-radius: 100%;
+    border-top: 0.5vmin solid #f004;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%) rotate(-40deg);
+}
+
+.cheek::after {
+    transform: translate(-10%, -35%) rotate(-20deg);
+}
+
+.arm {
+    width: 40%;
+    height: 20%;
+    border-radius: 0% 50% 50% 50%;
+    top: 30%;
+    right: 5%;
+    transform: translateX(100%) rotate(-25deg);
+    box-shadow: 0 -2.5vmin 0 -1vmin
+}
+
+.arm::before,
+.arm::after {
+    content: "";
+    width: 30%;
+    height: 1.5vmin;
+    background: black;
+    border-radius: 0 100% 100% 0;
+    right: -5%;
+    top: -1.25vmin
+}
+
+.arm::after {
+    transform-origin: left center;
+    transform: rotate(-30deg);
+    width: 25%;
+    right: 5%;
+}
+
+.arm+.arm {
+    left: 12%;
+    top: 10%;
+    border-radius: 15% 50% 50% 50%;
+    transform: scaleX(-1) translateX(100%) rotate(-10deg) scaleY(-1);
+}
+
+.hat-base {
+    width: 55%;
+    height: 14%;
+    background: #333;
+    border-radius: 100% / 120% 120% 90% 90%;
+    box-shadow:
+        inset 2vmin -1.5vmin 4vmin 0.5vmin #fff5,
+        inset -2vmin -1.5vmin 4vmin 0.5vmin #fff5,
+        inset 0 0 5vmin 2vmin #000,
+        inset 0 -2vmin 4vmin 1vmin #000,
+
+        0 0.25vmin 0 1vmin;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 18%;
+}
+
+.hat-top {
+    width: 29%;
+    height: 25%;
+    background:
+        radial-gradient(300% 50% at 50% 0, #000 18%, #0000 0),
+        radial-gradient(200% 100% at 50% 0, #0000 0 80%, #000 0 82%, purple 0);
+    background-color: #333;
+    box-shadow:
+        inset 0 1vmin 1vmin -1vmin #fff8,
+        inset 1.5vmin 1.5vmin 3vmin 0.25vmin #fff5,
+        inset -2vmin 1.5vmin 3vmin 0.25vmin #fff3,
+        inset 0 0 5vmin 1vmin #0007,
+        inset 0 -2vmin 4vmin 1vmin #0007,
+        0 0.1vmin 0 1vmin;
+    border-radius: 100% / 10% 10% 10% 5%;
+    left: 50%;
+    top: 1%;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+}
+
+.hat-top::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(300% 50% at 50% 0, #0000 18%, #000 18.5% 24%, #0000 24.5%)
+}
+
+.shadow {
+    width: 100%;
+    height: 15%;
+    background: #0001;
+    border-radius: 50%;
+    bottom: -6%;
+    filter: blur(0.5vmin)
+}
+
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(1000px);
+        transform: translateY(-50%);
+    }
+
+    25% {
+        transform: translate(-400px);
+    }
+
+    50% {
+        transform: translateX(500px);
+
+    }
+
+    75% {
+        transform: translateX(-500px);
+        transform: translatey(-50%);
+    }
+
+    100% {
+        transform: translateY(-200px);
+        transform: translateX(-100px);
+    }
+
+}
+
+.canvas {
+    animation: moveLeftRight 10s linear infinite;
+}
+
+/*animation neige*/
+.neige {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("https://th.bing.com/th/id/R.d2785e9f642740146cc36de7763e3415?rik=%2f2hzs6f8WDZ%2bVQ&pid=ImgRaw&r=0");
+    animation: neige 1s linear infinite;
+    opacity: 1;
+    pointer-events: none;
+}
+
+@keyframes neige {
+    0% {
+        background-position: 0% 100%;
+        opacity: 1;
+    }
+
+    100% {
+        background-position: 0% 0%;
+        opacity: 1;
+    }
+}
+
+/*animation pluie*/
+.rain {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url("https://www.pngmart.com/files/5/Rain-Transparent-Background.png");
+    animation: rain 2s linear infinite;
+    opacity: 1;
+    pointer-events: none;
+
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0% 0%;
+        opacity: 1;
+    }
+
+    100% {
+        background-position: 0% 100%;
+        opacity: 1;
+    }
+}
+
+/*animation parapluie*/
+.umbrella {
+    position: absolute;
+    width: 90%;
+    height: 100vh;
+    left: 600px;
+    top: 20px;
+    background-image: url("https://th.bing.com/th/id/R.46a543909ca48944a7c08156ec4cbb72?rik=LTyzc8buy5e3Cw&riu=http%3a%2f%2fvignette3.wikia.nocookie.net%2fpottermore%2fimages%2f3%2f3f%2fCocktail_Umbrella.png%2frevision%2flatest%3fcb%3d20140819024209&ehk=JZ7bL%2feiEnQVKJF9oYjOGMEiby6haWrCt6sQxH6b2jY%3d&risl=&pid=ImgRaw&r=0");
+    background-repeat: no-repeat;
+    background-size: 40%;
+    transform: rotate(10deg);
+
+    opacity: 1;
+
+}
+
+/*animation nuage*/
+.nuage1 {
+
+    background-repeat: repeat-x;
+    position: absolute;
+    height: 1100px;
+    width: 1900px;
+    background-size: 25%;
+    background-image: url("https://www.pngplay.com/wp-content/uploads/3/Des-Nuages-PNG-Gratuit-Telecharger-420x272.png");
+    animation: nuage1 8s linear infinite;
+    opacity: 0.6;
+    pointer-events: none;
+    top: 0;
+}
+
+@keyframes nuage1 {
+    from {
+        left: -900px;
+    }
+
+    to {
+        left: 100%;
+    }
+}
+
+h1 {
+    text-align: left;
+    margin-left: 65px;
+    font-family: "Gill Sans", sans-serif;
+    font-size: 1.5rem;
+}
+
+input {
+    width: 250px;
+    height: 25px;
+    text-align: center;
+    margin: 15px;
+    margin-left: 30px;
+    display: block;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 30px;
+    margin-left: 10px;
+    border-radius: 30%;
+}
+
+#city {
+    width: 200px;
+    /* Définissez la largeur de la première boîte */
+    height: 100px;
+    /* Définissez la hauteur de la première boîte */
+    font-size: 1.5rem;
+    /* Augmentez la taille de la police */
+    background-image: linear-gradient(to right top, #EAEAEA, #DCE0EE, #C3D8F1, #A0D2F1, #74CEEA, #63CCE3, #54CADA, #46C8CF, #59C9CC, #68C9CA, #75CAC8, #81CAC6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* Positionnement absolu */
+    top: 25%;
+    /* Positionner la boîte au milieu verticalement */
+    left: 80%;
+    /* Positionner la boîte au milieu horizontalement */
+    transform: translate(-50%, -50%);
+    /* Centrer la boîte exactement au milieu */
+    overflow: hidden;
+    border-radius: 40%;
+    color: #fff;
+    margin-top: 1%
+}
+
+#weather-description {
+    display: flex;
+}
+
+#temp {
+    background-image: linear-gradient(to right top, #EAEAEA, #DCE0EE, #C3D8F1, #A0D2F1, #74CEEA, #63CCE3, #54CADA, #46C8CF, #59C9CC, #68C9CA, #75CAC8, #81CAC6);
+}
+
+#humidity {
+    background-image: linear-gradient(to right top, #EAEAEA, #DCE0EE, #C3D8F1, #A0D2F1, #74CEEA, #63CCE3, #54CADA, #46C8CF, #59C9CC, #68C9CA, #75CAC8, #81CAC6);
+}
+
+#wind {
+    background-image: linear-gradient(to right top, #EAEAEA, #DCE0EE, #C3D8F1, #A0D2F1, #74CEEA, #63CCE3, #54CADA, #46C8CF, #59C9CC, #68C9CA, #75CAC8, #81CAC6);
+}
+
+button {
+    display: block;
+    text-align: center;
+    outline: 0;
+    margin: 0px 95px 0px;
+    cursor: pointer;
+    will-change: box-shadow, transform;
+    background: radial-gradient(100% 100% at 100% 0%, #89E5FF 0%, #5468FF 100%);
+    box-shadow: 0px 2px 4px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px rgb(58 65 111 / 50%);
+    padding: 0 32px;
+    border-radius: 6px;
+    color: #fff;
+    height: 30px;
+    font-size: 15px;
+    text-shadow: 0 1px 0 rgb(0 0 0 / 40%);
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+    :hover {
+        box-shadow: 0px 4px 8px rgb(45 35 66 / 40%), 0px 7px 13px -3px rgb(45 35 66 / 30%), inset 0px -3px 0px #3C4FE0;
+        transform: translateY(-2px);
+    }
+
+    :active {
+        box-shadow: inset 0px 3px 7px #3C4FE0;
+        transform: translateY(2px);
+    }
+}

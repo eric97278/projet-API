@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="projet collectif.css" />
+  <title>Openweather test</title>
+  <script src="projet collectif.js" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="cloud"></div>
+  <div class="container">
+    <div id="weather-info">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-6 my-3">
+          <form>
+            <div class="form-group">
+              <input type="text" placeHolder="définir la ville" class="form-control" id="inputCity" list="cities" />
+              <button type="submit" class="btn btn-info btn-block">
+                Rechercher
+              </button>
+          </form>
+        </div>
+        <div id="contentCloud">
+          <div class="col-12 col-sm-6 d-flex justify-content-center my-3">
+            <div class="box-container">
+              <div id="city" class="box"></div>
+              <div id="temp" class="box"></div>
+              <div id="humidity" class="box"></div>
+              <div id="wind" class="box"></div>
+              <div id="contentCloud">
+                <!--animation-->
+                <div class="rain" id="idRain"></div>
+                <div class="neige" id="idNeige"></div>
+                <div class="nuage1" id="idNuage"></div>
+                <!--soleil -->
+                <div class="sun" id="idSun"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--bonhomme de neige-->
+      <div id="idSnowman">
+        <div class="canvas">
+          <div class="hill"></div>
+          <div class="shadow"></div>
+          <div class="body">
+            <div class="button"></div>
+            <div class="button"></div>
+            <div class="arm"></div>
+            <div class="arm"></div>
+          </div>
+          <div class="thread"></div>
+          <div class="scarf-hanging"></div>
+          <div class="scarf"></div>
+          <div class="head">
+            <div class="cheek"></div>
+            <div class="cheek"></div>
+            <div class="eye"></div>
+            <div class="eye"></div>
+            <div class="mouth"></div>
+            <div class="nose"></div>
+          </div>
+          <div class="hat-base"></div>
+          <div class="hat-top"></div>
+        </div>
+      </div>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-pjLixmcUq4SnXKeZ7All8F0Jv+1zY3PbF+LoD6Cz/LCwBOGzIvE9qBqdxI+oM/o4"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
